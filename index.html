@@ -10,12 +10,12 @@
   <body>
     <form novalidate>
       <p>
-        <label for="mail">
+        <label class="top" for="mail">
           <span>Please enter your email adress:</span>
           <input type="email" name="mail" id="mail" required minlength="8" />
           <span class="errorMail" aria-live="polite" id="err"></span>
         </label>
-        <label for="country">
+        <label class="left" id="broken" for="country">
           <span>Please select your country:</span>
           <select name="country" id="country">
             <option value="ch">Switzerland</option>
@@ -26,7 +26,7 @@
           </select>
           <span class="errorCountry" aria-live="polite" id="err"></span>
         </label>
-        <label for="zip">
+        <label class="right" for="zip">
           <span>Zip code:</span>
           <input
             type="text"
@@ -38,7 +38,7 @@
           />
           <span class="errorZip" aria-live="polite" id="err"></span>
         </label>
-        <label for="password">
+        <label class="left" for="password">
           <span>password:</span>
           <input
             minlength="8"
@@ -49,7 +49,7 @@
           />
           <span class="errorPass" aria-live="polite" id="err"></span>
         </label>
-        <label for="conf-password">
+        <label class="right" for="conf-password">
           <span>confirm password:</span>
           <input
             minlength="8"

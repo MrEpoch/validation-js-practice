@@ -12,7 +12,6 @@ const passwordError = document.querySelector("#password + span.errorPass");
 const confPassError = document.querySelector(
   "#conf-password + span.errorConfPass"
 );
-const btnSubmit = document.querySelector("button");
 
 const checkZip = (shortState) => {
   function ZipObj(regExpZip, state, zipDig, zipCondt) {
@@ -126,6 +125,11 @@ const formListener = () => {
 formListener();
 
 email.addEventListener("input", () => {
+  if (email.value.length !== 0) {
+    email.classList.add("val");
+  } else {
+    email.classList.remove("val");
+  }
   if (email.validity.valid) {
     emailError.textContent = "";
     emailError.className = "errorMail";
@@ -135,6 +139,11 @@ email.addEventListener("input", () => {
 });
 
 country.addEventListener("input", () => {
+  if (country.value.length !== 0) {
+    country.classList.add("val");
+  } else {
+    country.classList.remove("val");
+  }
   if (country.validity.valid) {
     countryError.textContent = "";
     countryError.className = "errorCountry";
@@ -144,6 +153,11 @@ country.addEventListener("input", () => {
 });
 
 zip.addEventListener("input", () => {
+  if (zip.value.length !== 0) {
+    zip.classList.add("val");
+  } else {
+    zip.classList.remove("val");
+  }
   if (zip.validity.valid) {
     zipError.textContent = "";
     zipError.className = "errorZip";
@@ -152,11 +166,32 @@ zip.addEventListener("input", () => {
   }
 });
 
-password.addEventListener("click", () => {
+password.addEventListener("input", () => {
+  if (password.value.length !== 0) {
+    password.classList.add("val");
+  } else {
+    password.classList.remove("val");
+  }
   if (password.validity.valid) {
     passwordError.textContent = "";
     passwordError.className = "errorPass";
   } else {
     showError().passErr();
+  }
+});
+
+confPass.addEventListener("input", () => {
+  if (confPass.value.length !== 0) {
+    confPass.classList.add("val");
+  } else {
+    confPass.classList.remove("val");
+  }
+  if (confPass.validity.valid) {
+    confPassError.textContent = "";
+    passwordError.textContent = "";
+    confPassError.className = "errorConfPass";
+    passwordError.className = "errorPass";
+  } else {
+    showError().confpassErr();
   }
 });
