@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation practice</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form novalidate>
+      <p>
+        <label for="mail">
+          <span>Please enter your email adress:</span>
+          <input type="email" name="mail" id="mail" required minlength="8" />
+          <span class="errorMail" aria-live="polite" id="err"></span>
+        </label>
+        <label for="country">
+          <span>Please select your country:</span>
+          <select name="country" id="country">
+            <option value="ch">Switzerland</option>
+            <option value="fr">France</option>
+            <option value="de">Germany</option>
+            <option value="nl">The Netherlands</option>
+            <option value="cz">Czech Republic</option>
+          </select>
+          <span class="errorCountry" aria-live="polite" id="err"></span>
+        </label>
+        <label for="zip">
+          <span>Zip code:</span>
+          <input
+            type="text"
+            minlength="4"
+            maxlength="5"
+            name="zip"
+            id="zip"
+            required
+          />
+          <span class="errorZip" aria-live="polite" id="err"></span>
+        </label>
+        <label for="password">
+          <span>password:</span>
+          <input
+            minlength="8"
+            type="password"
+            name="password"
+            id="password"
+            required
+          />
+          <span class="errorPass" aria-live="polite" id="err"></span>
+        </label>
+        <label for="conf-password">
+          <span>confirm password:</span>
+          <input
+            minlength="8"
+            type="password"
+            name="conf-password"
+            id="conf-password"
+            required
+          />
+          <span class="errorConfPass" aria-live="polite" id="err"></span>
+        </label>
+      </p>
+      <button>submit</button>
+    </form>
+    <script src="app.js"></script>
+  </body>
+</html>
